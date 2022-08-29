@@ -31,16 +31,8 @@ Now we need to get devices running less than Android 12 working with a splash sc
 2. Add the following line of code before base.OnCreate() in the MainActivity.
 AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
 
-3. Add the following style to styles.xml
-
-<style name="AppTheme.Starting" parent="Theme.SplashScreen.IconBackground">
-	<item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
-	<item name="windowSplashScreenIconBackgroundColor">@color/ic_launcher_background</item>
-	<item name="windowSplashScreenBackground">?android:colorBackground</item>
-	<item name="postSplashScreenTheme">@style/AppTheme</item>
-</style>
-
-4. Modify the Activity attribute of the MainActivity by removing Theme = "@style/AppTheme". This is automatically handled by the item postSplashScreenTheme. 
+3. Copy the style AppTheme.Starting from this project and paste  into your styles.xml.
+4. Modify the Activity attribute of the MainActivity by removing Theme = "@style/AppTheme". This is automatically handled by the item name postSplashScreenTheme. 
 5. Finally open the project’s Properties and under the manifest tab change the Application Theme from @style/AppTheme to @style/AppTheme.Starting
 
 Rebuild and deploy and now all devices between Android 7.0 and Android 13 will display the Xamarin Application Icon as a splash screen before the MainActivity is rendered.

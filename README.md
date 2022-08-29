@@ -2,7 +2,7 @@ XamarinSimpleSplashScreen
 
 Most of the NavigationGraph tutorial projects here use the new Splash API using Xamarin.AndroidX.Core.SplashScreen. However, after going back and forward with another Xamarin Forms developer who basically wasn’t interested in the NavigationComponent he added the following comment at the end of our exchange.
 
-I think what would have been helpful at the beginning if your sample project did not contain all that extra good stuff but just the splash screen, I would have stripped out all the rest, as it would have been a tad easier to follow especially if you mainly do forms and don't really touch android much.
+"I think what would have been helpful at the beginning if your sample project did not contain all that extra good stuff but just the splash screen, I would have stripped out all the rest, as it would have been a tad easier to follow especially if you mainly do forms and don't really touch android much."
 
 So this XamarinSimpleSplashScreen project is just that – simple. It just does the basic SplashScreen.
 

@@ -37,7 +37,7 @@ AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
 
 Rebuild and deploy and now all devices between Android 7.0 and Android 13 will display the Xamarin Application Icon as a splash screen before the MainActivity is rendered.
 
-Now swap to the Release build and change the following via the tab Android Options Code Shrinker r8, enable startup tracing, and set Linking to SDK and User Assemblies. Rebuild and deploy.
+Now swap to the Release build and change the following via the tab Android Options Code Shrinker r8, then enable startup tracing, and finally set Linking to SDK and User Assemblies. Rebuild and deploy.
 
 This will result in the fastest possible start on any device and the smallest apk. You can measure the result by searching for the phrase “Displayed” in the log cat logs. Remember to clear the app from most recents every time you launch it as the splash screen only displays when doing a cold start. As an example, this shows a value of 246ms on a Pixel 6 running Android 13. If you want to artificially slow it down to better view the icon add System.Threading.Thread.Sleep(1000) before SetContentView(). Just don’t forget to comment that line for production code when you are done.
 

@@ -31,12 +31,14 @@ Now we need to get devices running less than Android 12 working with a splash sc
 2. Add the following line of code before base.OnCreate() in the MainActivity.
 AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
 3. Add the following style to styles.xml
+
 <style name="AppTheme.Starting" parent="Theme.SplashScreen.IconBackground">
 		<item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
 		<item name="windowSplashScreenIconBackgroundColor">@color/ic_launcher_background</item>
 		<item name="windowSplashScreenBackground">?android:colorBackground</item>
 		<item name="postSplashScreenTheme">@style/AppTheme</item>
-	</style>
+</style>
+
 4. Modify the Activity attribute of the MainActivity by removing Theme = "@style/AppTheme". This is automatically handled by the item postSplashScreenTheme. 
 5. Finally open the project’s Properties and under the manifest tab change the Application Theme from @style/AppTheme to @style/AppTheme.Starting
 
@@ -46,7 +48,7 @@ Now swap to the Release build and change the following via the tab Android Optio
 
 This will result in the fastest possible start on any device and the smallest apk. You can measure the result by searching for the phrase “Displayed” in the log cat logs. Remember to clear the app from most recents every time you launch it as the splash screen only displays when doing a cold start. As an example, this shows a value of 246ms on a Pixel 6 running Android 13. If you want to artificially slow it down to better view the icon add System.Threading.Thread.Sleep(1000) before SetContentView(). Just don’t forget to comment that line for production code when you are done.
 
-All that is needed now is to swap out your application icons for the Xamarin icons.
+All that is needed now is to swap out the Xamarin icons for your own application icons.
 
 Note: Earlier, I specifically stated devices Android 7.0 to Android 13. I only have specific devices I can deploy to within that range. I believe that the SplashApi is applicable down to Android 5.0 or API 21. However, as I no longer have working devices below Android 7 API 24 I can’t confirm that it works with devices less than Android 7 API 24.  
 

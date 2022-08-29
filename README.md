@@ -30,13 +30,14 @@ Now we need to get devices running less than Android 12 working with a splash sc
 1. Open the Nuget package manager and search for androidx.core.splash and make sure include pre-release is checked. This is just a coincidence, but as I’m writing this, release 1.0.0 is now available, so you no longer need to check the prerelease checkbox.
 2. Add the following line of code before base.OnCreate() in the MainActivity.
 AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
+
 3. Add the following style to styles.xml
 
 <style name="AppTheme.Starting" parent="Theme.SplashScreen.IconBackground">
-		<item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
-		<item name="windowSplashScreenIconBackgroundColor">@color/ic_launcher_background</item>
-		<item name="windowSplashScreenBackground">?android:colorBackground</item>
-		<item name="postSplashScreenTheme">@style/AppTheme</item>
+	<item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+	<item name="windowSplashScreenIconBackgroundColor">@color/ic_launcher_background</item>
+	<item name="windowSplashScreenBackground">?android:colorBackground</item>
+	<item name="postSplashScreenTheme">@style/AppTheme</item>
 </style>
 
 4. Modify the Activity attribute of the MainActivity by removing Theme = "@style/AppTheme". This is automatically handled by the item postSplashScreenTheme. 

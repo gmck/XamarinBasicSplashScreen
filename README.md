@@ -51,5 +51,6 @@ Visual Studio 2022 version used
 VS 2022 17.4.0 Preview 1.0 - 28 August 2022
 
 NOTE
+
 Nov 29th 2022
 Had to add a couple of lines to the MainActivity to correct an incorrect display in Landscape mode if the device has a notch.

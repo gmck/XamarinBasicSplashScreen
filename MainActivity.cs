@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Views;
 using AndroidX.AppCompat.App;
 
 namespace com.companyname.XamarinBasicSplashScreen
@@ -12,6 +13,10 @@ namespace com.companyname.XamarinBasicSplashScreen
             AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
 
             base.OnCreate(savedInstanceState);
+
+            // Include this if using the Splash Screen API - rotate to Landscape on a device with a notch to see why - with this code commented.
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
+                Window.Attributes.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.Default;
 
             // If you want to get a good look at the icon to check it. Don't forget remove from production code
             //System.Threading.Thread.Sleep(1000);
